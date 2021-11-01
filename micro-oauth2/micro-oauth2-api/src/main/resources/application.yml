@@ -1,0 +1,15 @@
+server:
+  port: 9501
+spring:
+
+  application:
+    name: micro-oauth2-api
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.206.124:8848
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

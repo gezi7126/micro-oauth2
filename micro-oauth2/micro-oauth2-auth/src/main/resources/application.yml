@@ -1,0 +1,32 @@
+server:
+  port: 9401
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.206.124:3306/users?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: root
+    password: 123
+    druid:
+      filters: stat
+      stat-view-servlet:
+        enabled: true
+      web-stat-filter:
+        enabled: true
+
+  application:
+    name: micro-oauth2-auth
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.206.124:8848
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+  redis:
+    database: 0
+    port: 6379
+    host: 192.168.206.124
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
